@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Name": "Dragonborn"
+  },
+  {
+    "Id": 2,
+    "Name": "Dwarf"
+  },
+  {
+    "Id": 3,
+    "Name": "Elf"
+  },
+  {
+    "Id": 4,
+    "Name": "Gnome"
+  },
+  {
+    "Id": 5,
+    "Name": "Half-Elf"
+  },
+  {
+    "Id": 6,
+    "Name": "Halfling"
+  },
+  {
+    "Id": 7,
+    "Name": "Half-Orc"
+  },
+  {
+    "Id": 8,
+    "Name": "Human"
+  },
+  {
+    "Id": 9,
+    "Name": "Tiefling"
+  }
+]

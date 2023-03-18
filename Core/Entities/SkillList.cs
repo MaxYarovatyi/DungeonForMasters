@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class SkillList
+    public class SkillList : BaseEntity
     {
         Skill Acrobatics { get; set; }
         Skill AnimalHandling { get; set; }

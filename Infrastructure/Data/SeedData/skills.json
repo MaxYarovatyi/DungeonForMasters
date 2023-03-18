@@ -1,0 +1,128 @@
+[
+  {
+    "Id": 1,
+    "Name": "Acrobatics",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Dex"
+  },
+  {
+    "Id": 2,
+    "Name": "Animal Handling",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Wis"
+  },
+  {
+    "Id": 3,
+    "Name": "Arcana",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Int"
+  },
+  {
+    "Id": 4,
+    "Name": "Athletics",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Str"
+  },
+  {
+    "Id": 5,
+    "Name": "Deception",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Cha"
+  },
+  {
+    "Id": 6,
+    "Name": "History",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Int"
+  },
+  {
+    "Id": 7,
+    "Name": "Insight",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Wis"
+  },
+  {
+    "Id": 8,
+    "Name": "Intimidation",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Cha"
+  },
+  {
+    "Id": 9,
+    "Name": "Investigation",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Int"
+  },
+  {
+    "Id": 10,
+    "Name": "Medicine",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Wis"
+  },
+  {
+    "Id": 11,
+    "Name": "Nature",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Int"
+  },
+  {
+    "Id": 12,
+    "Name": "Perception",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Wis"
+  },
+  {
+    "Id": 13,
+    "Name": "Performance",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Cha"
+  },
+  {
+    "Id": 14,
+    "Name": "Persuasion",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Cha"
+  },
+  {
+    "Id": 15,
+    "Name": "Religion",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Int"
+  },
+  {
+    "Id": 16,
+    "Name": "Sleight of Hand",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Dex"
+  },
+  {
+    "Id": 17,
+    "Name": "Stealth",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Dex"
+  },
+  {
+    "Id": 18,
+    "Name": "Survival",
+    "Value": 0,
+    "Selected": "false",
+    "Modificator": "Wis"
+  }
+]

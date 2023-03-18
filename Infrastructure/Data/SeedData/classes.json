@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "Name": "Barbarian"
+  },
+  {
+    "Id": 2,
+    "Name": "Bard"
+  },
+  {
+    "Id": 3,
+    "Name": "Cleric"
+  },
+  {
+    "Id": 4,
+    "Name": "Druid"
+  },
+  {
+    "Id": 5,
+    "Name": "Fighter"
+  },
+  {
+    "Id": 6,
+    "Name": "Monk"
+  },
+  {
+    "Id": 7,
+    "Name": "Paladin"
+  },
+  {
+    "Id": 8,
+    "Name": "Ranger"
+  },
+  {
+    "Id": 9,
+    "Name": "Rogue"
+  },
+  {
+    "Id": 10,
+    "Name": "Sorcerer"
+  },
+  {
+    "Id": 11,
+    "Name": "Warlock"
+  },
+  {
+    "Id": 12,
+    "Name": "Wizard"
+  }
+]

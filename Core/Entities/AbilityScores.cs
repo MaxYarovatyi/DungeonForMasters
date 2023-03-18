@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class AbilityScores
+    public class AbilityScores : BaseEntity
     {
         public int Strength { get; set; }
         public int Dexterity { get; set; }

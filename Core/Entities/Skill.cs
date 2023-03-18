@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Skill
+    public class Skill : BaseEntity
     {
         public bool Selected { get; set; }
         public string Name { get; set; }
