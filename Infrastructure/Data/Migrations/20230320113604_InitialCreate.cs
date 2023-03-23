@@ -55,15 +55,51 @@ namespace infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SkillList",
+                name: "CharacterSkills",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Acrobatics = table.Column<int>(type: "INTEGER", nullable: false),
+                    AnimalHandling = table.Column<int>(type: "INTEGER", nullable: false),
+                    Arcana = table.Column<int>(type: "INTEGER", nullable: false),
+                    Athletics = table.Column<int>(type: "INTEGER", nullable: false),
+                    Deception = table.Column<int>(type: "INTEGER", nullable: false),
+                    History = table.Column<int>(type: "INTEGER", nullable: false),
+                    Insight = table.Column<int>(type: "INTEGER", nullable: false),
+                    Intimidation = table.Column<int>(type: "INTEGER", nullable: false),
+                    Investigation = table.Column<int>(type: "INTEGER", nullable: false),
+                    Medicine = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nature = table.Column<int>(type: "INTEGER", nullable: false),
+                    Perception = table.Column<int>(type: "INTEGER", nullable: false),
+                    Performance = table.Column<int>(type: "INTEGER", nullable: false),
+                    Persuasion = table.Column<int>(type: "INTEGER", nullable: false),
+                    Religion = table.Column<int>(type: "INTEGER", nullable: false),
+                    SleightOfHand = table.Column<int>(type: "INTEGER", nullable: false),
+                    Stealth = table.Column<int>(type: "INTEGER", nullable: false),
+                    Survival = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SkillList", x => x.Id);
+                    table.PrimaryKey("PK_CharacterSkills", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Modificators",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    StrengthModificator = table.Column<int>(type: "INTEGER", nullable: false),
+                    DexterityModificator = table.Column<int>(type: "INTEGER", nullable: false),
+                    ConstitutionModificator = table.Column<int>(type: "INTEGER", nullable: false),
+                    IntelligenceModificator = table.Column<int>(type: "INTEGER", nullable: false),
+                    WisdomModificator = table.Column<int>(type: "INTEGER", nullable: false),
+                    CharismaModificator = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Modificators", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,21 +108,22 @@ namespace infrastructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CharName = table.Column<string>(type: "TEXT", nullable: true),
+                    CharName = table.Column<string>(type: "TEXT", maxLength: 30, nullable: true),
                     Level = table.Column<int>(type: "INTEGER", nullable: false),
                     CharClassId = table.Column<int>(type: "INTEGER", nullable: false),
                     CharRaceId = table.Column<int>(type: "INTEGER", nullable: false),
                     ArmorClass = table.Column<int>(type: "INTEGER", nullable: false),
-                    PlayerName = table.Column<string>(type: "TEXT", nullable: true),
+                    PlayerName = table.Column<string>(type: "TEXT", maxLength: 30, nullable: true),
                     ExpiriencePoints = table.Column<int>(type: "INTEGER", nullable: false),
                     Initiative = table.Column<int>(type: "INTEGER", nullable: false),
                     Speed = table.Column<int>(type: "INTEGER", nullable: false),
-                    AbilityScoresId = table.Column<int>(type: "INTEGER", nullable: true),
-                    SkillsId = table.Column<int>(type: "INTEGER", nullable: true),
+                    AbilityScoresId = table.Column<int>(type: "INTEGER", nullable: false),
+                    SkillsId = table.Column<int>(type: "INTEGER", nullable: false),
                     Background = table.Column<string>(type: "TEXT", nullable: true),
                     Alignment = table.Column<string>(type: "TEXT", nullable: true),
-                    CurrentHitPoints = table.Column<string>(type: "TEXT", nullable: true),
-                    MaxHitPoints = table.Column<string>(type: "TEXT", nullable: true)
+                    CurrentHitPoints = table.Column<int>(type: "INTEGER", nullable: false),
+                    MaxHitPoints = table.Column<int>(type: "INTEGER", nullable: false),
+                    ModificatorsId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,7 +132,8 @@ namespace infrastructure.Data.Migrations
                         name: "FK_CharacterSheets_AbilityScores_AbilityScoresId",
                         column: x => x.AbilityScoresId,
                         principalTable: "AbilityScores",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CharacterSheets_CharacterClasses_CharClassId",
                         column: x => x.CharClassId,
@@ -109,10 +147,17 @@ namespace infrastructure.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CharacterSheets_SkillList_SkillsId",
+                        name: "FK_CharacterSheets_CharacterSkills_SkillsId",
                         column: x => x.SkillsId,
-                        principalTable: "SkillList",
-                        principalColumn: "Id");
+                        principalTable: "CharacterSkills",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CharacterSheets_Modificators_ModificatorsId",
+                        column: x => x.ModificatorsId,
+                        principalTable: "Modificators",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -129,6 +174,11 @@ namespace infrastructure.Data.Migrations
                 name: "IX_CharacterSheets_CharRaceId",
                 table: "CharacterSheets",
                 column: "CharRaceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CharacterSheets_ModificatorsId",
+                table: "CharacterSheets",
+                column: "ModificatorsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CharacterSheets_SkillsId",
@@ -152,7 +202,10 @@ namespace infrastructure.Data.Migrations
                 name: "CharacterRaces");
 
             migrationBuilder.DropTable(
-                name: "SkillList");
+                name: "CharacterSkills");
+
+            migrationBuilder.DropTable(
+                name: "Modificators");
         }
     }
 }

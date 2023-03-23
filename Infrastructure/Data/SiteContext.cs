@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Core.Entities;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Infrastructure.Data.Config;
 
 namespace Infrastructure.Data
 {
@@ -17,11 +18,14 @@ namespace Infrastructure.Data
         public DbSet<CharacterSheet> CharacterSheets { get; set; }
         public DbSet<CharacterRace> CharacterRaces { get; set; }
         public DbSet<CharacterClass> CharacterClasses { get; set; }
+        public DbSet<SkillList> CharacterSkills { get; set; }
+        public DbSet<AbilityScores> AbilityScores { get; set; }
+        public DbSet<Modificators> Modificators { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            modelBuilder.ApplyConfiguration(new SheetConfiguration());
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             if (Database.ProviderName == "Microsoft.EntityFramework.Sqlite")
             {

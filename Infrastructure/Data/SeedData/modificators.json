@@ -1,0 +1,11 @@
+[
+  {
+    "Id": 1,
+    "StrengthModificator": 2,
+    "DexterityModificator": 1,
+    "ConstitutionModificator": 0,
+    "IntelligenceModificator": 0,
+    "WisdomModificator": -1,
+    "CharismaModificator": -2
+  }
+]

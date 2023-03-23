@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Modificators
+    public class Modificators : BaseEntity
     {
         public int StrengthModificator { get; set; }
         public int DexterityModificator { get; set; }

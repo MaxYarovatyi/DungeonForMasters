@@ -79,3 +79,5 @@ D:\Projects\DungeonForMasters\API\bin\Debug\net6.0\core.dll
 D:\Projects\DungeonForMasters\API\bin\Debug\net6.0\Infrastructure.dll
 D:\Projects\DungeonForMasters\API\bin\Debug\net6.0\Infrastructure.pdb
 D:\Projects\DungeonForMasters\API\bin\Debug\net6.0\core.pdb
+D:\Projects\DungeonForMasters\api\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+D:\Projects\DungeonForMasters\api\bin\Debug\net6.0\StackExchange.Redis.dll

@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "CharName": "Albek",
+    "PlayerName": "Max",
+    "Alignment": "Chaotic Evil",
+    "CharClassId": 2,
+    "CharRaceId": 3,
+    "Speed": 0,
+    "Initiative": 0,
+    "Level": 0,
+    "ArmorClass": 0,
+    "CurrentHitPoints": 10,
+    "MaxHitPoints": 10,
+    "Background": "Bard",
+    "AbilityScoresId": 1,
+    "SkillsId": 1,
+    "ModificatorsId": 1
+  }
+]

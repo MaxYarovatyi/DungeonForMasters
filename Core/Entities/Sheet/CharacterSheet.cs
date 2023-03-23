@@ -19,10 +19,15 @@ namespace Core.Entities
         public int Initiative { get; set; }
         public int Speed { get; set; }
         public AbilityScores AbilityScores { get; set; }
+        public int AbilityScoresId { get; set; }
+        // public List<Skill> Skills { get; set; }
         public SkillList Skills { get; set; }
+        public int SkillsId { get; set; }
         public string Background { get; set; }
         public string Alignment { get; set; }
-        public string CurrentHitPoints { get; set; }
-        public string MaxHitPoints { get; set; }
+        public int CurrentHitPoints { get; set; }
+        public int MaxHitPoints { get; set; }
+        public Modificators Modificators { get; set; }
+        public int ModificatorsId { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace Infrastructure.Data
         {
             try
             {
+
                 if (!context.CharacterRaces.Any())
                 {
                     var racesData = File.ReadAllText("../Infrastructure/Data/SeedData/races.json");
@@ -36,16 +37,59 @@ namespace Infrastructure.Data
                     }
                     await context.SaveChangesAsync();
                 }
+                if (!context.AbilityScores.Any())
+                {
+                    var scoresData = File.ReadAllText("../Infrastructure/Data/SeedData/abilityScores.json");
+                    var scores = JsonSerializer.Deserialize<List<AbilityScores>>(scoresData);
+
+                    foreach (var item in scores)
+                    {
+                        context.AbilityScores.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
+                if (!context.CharacterSkills.Any())
+                {
+                    var skillsData = File.ReadAllText("../Infrastructure/Data/SeedData/skills.json");
+                    var skills = JsonSerializer.Deserialize<List<SkillList>>(skillsData);
+
+                    foreach (var item in skills)
+                    {
+                        context.CharacterSkills.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
+                if (!context.Modificators.Any())
+                {
+                    var modificatorsData = File.ReadAllText("../Infrastructure/Data/SeedData/modificators.json");
+                    var modificators = JsonSerializer.Deserialize<List<Modificators>>(modificatorsData);
+
+                    foreach (var item in modificators)
+                    {
+                        context.Modificators.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
                 if (!context.CharacterSheets.Any())
                 {
-                    context.CharacterSheets.Add(new CharacterSheet
+                    var sheetsData = File.ReadAllText("../Infrastructure/Data/SeedData/sheets.json");
+                    var sheets = JsonSerializer.Deserialize<List<CharacterSheet>>(sheetsData);
+
+                    foreach (var item in sheets)
                     {
-                        CharName = "Albek",
-                        PlayerName = "Max",
-                        Alignment = "Chaotic Evil",
-                        CharClassId = 2,
-                        CharRaceId = 3
-                    });
+                        context.CharacterSheets.Add(item);
+                    }
+                    // context.CharacterSheets.Add(new CharacterSheet{
+                    //     CharName="Albek",
+                    //     CharClassId=1,
+                    //     CharRaceId=1,
+                    //     CurrentHitPoints=10,
+                    //     MaxHitPoints=10,
+                    //     PlayerName="Max",
+                    //     ModificatorsId =1,
+                    //     SkillsId=1,
+                    // });
+                    await context.SaveChangesAsync();
                 }
             }
             catch (Exception ex)
