@@ -13,16 +13,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<ConnectionMultiplexer>(c =>
-{
-    var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true);
-    return ConnectionMultiplexer.Connect(configuration);
-});
+
 builder.Services.AddDbContext<SiteContext>(x =>
     x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ISheetRepository, SheetRepository>();
 builder.Services.AddScoped<IGameRoomRepository, GameRoomRepository>();
+builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
+{
+    var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true);
+    return ConnectionMultiplexer.Connect(configuration);
+});
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
