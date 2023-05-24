@@ -3,16 +3,34 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SheetComponent } from './sheet/sheet.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
+import { CreateGameroomComponent } from './gameroom/create-gameroom/create-gameroom.component';
+import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GameroomModule } from './gameroom/gameroom.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SheetComponent,
+    NavBarComponent,
+    HomeComponent,
+    CreateGameroomComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    SharedModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [ReactiveFormsModule],
 })
-export class AppModule { }
+export class AppModule {}

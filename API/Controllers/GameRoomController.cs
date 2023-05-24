@@ -22,7 +22,6 @@ namespace API.Controllers
             var gameroom = await _gameRoomRepository.GetGameRoomAsync(id);
             return Ok(gameroom ?? new GameRoom(id));
         }
-
         [HttpPost]
 
         public async Task<ActionResult<GameRoom>> UpdateGameRoom(GameRoom gameRoom)
