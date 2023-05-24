@@ -35,5 +35,11 @@ namespace API.Controllers
         {
             await _gameRoomRepository.DeleteGameRoomAsync(id);
         }
+        [HttpGet("name_exists")]
+        public async Task<ActionResult<bool>> CheckNameExists(string id)
+        {
+            var gameroom = await _gameRoomRepository.GetGameRoomAsync(id);
+            return gameroom != null ? true : false;
+        }
     }
 }

@@ -15,9 +15,13 @@ export class GameroomService {
 
   createGameRoom(formValues: any) {
     let gameroom = new Gameroom();
-    gameroom.name = formValues.name;
+    gameroom.id = formValues.name;
     gameroom.password = formValues.password;
     console.log(gameroom);
     return this.http.post(this.baseUrl + 'gameroom', gameroom);
+  }
+
+  checkNameExists(name: string) {
+    return this.http.get(this.baseUrl + 'gameroom/name_exists?id=' + name);
   }
 }
