@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EgJn5kvHw+jeJFXhebGJ27kjEuIKjO2RtRi7IIhPNdxNSIwXvw84r25jcJOLjRKabnf1eDoRPqUAzoaJ2UEteQ==",
+  "dgSpecHash": "11wYpV0mKN1cir6RkgJr85nKNrQO8Cbrb/dYs+UUKzQwC1MD8oVMayuNfyZE3fcfyIS5ZIk2BWKHz2GZ45MeEA==",
   "success": true,
-  "projectFilePath": "d:\\Projects\\DungeonForMasters\\Core\\core.csproj",
+  "projectFilePath": "D:\\Projects\\DungeonForMasters\\Core\\core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.16\\microsoft.aspnetcore.cryptography.internal.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.16\\microsoft.aspnetcore.cryptography.keyderivation.6.0.16.nupkg.sha512",

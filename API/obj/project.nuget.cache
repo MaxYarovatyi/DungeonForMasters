@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sibcRW8+seKNX2ZQPL6Mm2a3SN34483oIOgOsh3J0o3CmS6LpH0G/TcQc5FmCLNsA1CnmQfns/utiYme8KCVsg==",
+  "dgSpecHash": "i4XtNB5Tx4uNJI+Pmf4iusE6obz+wr7lW9IzyvE4gLXXdJXxuUmUN6zZJIeBP1RK1t3q3gq6vd4fRj0Hpu20Dg==",
   "success": true,
-  "projectFilePath": "d:\\Projects\\DungeonForMasters\\API\\api.csproj",
+  "projectFilePath": "D:\\Projects\\DungeonForMasters\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

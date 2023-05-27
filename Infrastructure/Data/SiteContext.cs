@@ -12,7 +12,7 @@ namespace Infrastructure.Data
 {
     public class SiteContext : DbContext
     {
-        public SiteContext(DbContextOptions options) : base(options)
+        public SiteContext(DbContextOptions<SiteContext> options) : base(options)
         {
         }
         public DbSet<CharacterSheet> CharacterSheets { get; set; }

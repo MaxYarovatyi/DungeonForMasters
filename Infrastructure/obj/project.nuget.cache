@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FzJtThPLLHsALhpDUfM1VOAa0Qhpz2Icwm3MHSyrAbPA9djwtZkc4HUJ1VdxrjC7mrNSdm8vcxKtaDQ9Km3zhg==",
+  "dgSpecHash": "I5zEIv8fwV1ddTsIfzzICLrYXMluJEItkJP2oXzDqY1SnV86zVC0God7iaPfq+rA5VO17x2uSo/ZT+x4qPRj2Q==",
   "success": true,
-  "projectFilePath": "d:\\Projects\\DungeonForMasters\\Infrastructure\\infrastructure.csproj",
+  "projectFilePath": "D:\\Projects\\DungeonForMasters\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
