@@ -14,7 +14,7 @@ namespace Infrastructure.Data
         private readonly IDatabase _database;
         public GameRoomRepository(IConnectionMultiplexer redis)
         {
-            _database = redis.GetDatabase();
+            _database = redis.GetDatabase(0);
         }
 
         public async Task<bool> DeleteGameRoomAsync(string id)

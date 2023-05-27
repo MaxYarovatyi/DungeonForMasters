@@ -19,6 +19,7 @@ builder.Services.AddDbContext<SiteContext>(x =>
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ISheetRepository, SheetRepository>();
 builder.Services.AddScoped<IGameRoomRepository, GameRoomRepository>();
+builder.Services.AddScoped<IUserGameRoomsRepository, UserGameRoomsRepository>();
 builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
 {
     var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  AbstractControlOptions,
   AsyncValidatorFn,
   FormBuilder,
   FormControl,
@@ -27,9 +28,17 @@ export class CreateGameroomComponent implements OnInit {
   }
 
   createGameroomForm() {
+    const nameOptions: AbstractControlOptions = {
+      validators: [Validators.required],
+      asyncValidators: [this.validateNameNotTaken()],
+    };
     this.gameroomForm = this.fb.group({
-      name: [null, Validators.required, [this.validateNameNotTaken()]],
-      password: [null, Validators.required],
+      name: [
+        '',
+        [Validators.required, Validators.pattern('^[a-zA-Z0-9._]+$')],
+        [this.validateNameNotTaken()],
+      ],
+      password: [null, [Validators.required]],
     });
   }
 
@@ -60,7 +69,7 @@ export class CreateGameroomComponent implements OnInit {
           return this.gameRoomService.checkNameExists(control.value).pipe(
             map((res) => {
               console.log(res);
-              return res ? { emailExists: true } : null;
+              return res ? { nameExists: true } : null;
             })
           );
         })
