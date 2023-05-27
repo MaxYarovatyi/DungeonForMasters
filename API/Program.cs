@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using StackExchange.Redis;
+using Infrastructure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SiteContext>(x =>
     x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppIdentityDbContext>(x =>
+{
+    x.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection"));
+});
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ISheetRepository, SheetRepository>();
 builder.Services.AddScoped<IGameRoomRepository, GameRoomRepository>();
