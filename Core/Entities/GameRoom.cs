@@ -18,6 +18,7 @@ namespace Core.Entities
 
         public string Id { get; set; }
         public string Password { get; set; }
+        public string MastersId { get; set; }
         public List<CharacterSheet> Sheets { get; set; } = new List<CharacterSheet>();
     }
 }

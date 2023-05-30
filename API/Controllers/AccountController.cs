@@ -36,6 +36,7 @@ namespace API.Controllers
 
             return new UserDto
             {
+                Id = user.Id,
                 DisplayName = user.DisplayName,
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user)
@@ -58,6 +59,7 @@ namespace API.Controllers
             if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
             return new UserDto
             {
+                Id = user.Id,
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user),
                 DisplayName = user.DisplayName
@@ -82,6 +84,7 @@ namespace API.Controllers
 
             return new UserDto
             {
+                Id = user.Id,
                 DisplayName = user.DisplayName,
                 Token = _tokenService.CreateToken(user),
                 Email = user.Email

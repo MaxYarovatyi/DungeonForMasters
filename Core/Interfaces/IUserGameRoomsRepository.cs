@@ -8,7 +8,7 @@ namespace Core.Interfaces
 {
     public interface IUserGameRoomsRepository
     {
-        Task<UserGameRooms> UpdateUserGameRooms(UserGameRooms gameRooms);
+        Task<UserGameRooms> UpdateUserGameRooms(string id, GameRoom room);
         Task<UserGameRooms> GetUserGameRooms(string id);
         Task<UserGameRooms> DeleteUserGameRooms();
     }

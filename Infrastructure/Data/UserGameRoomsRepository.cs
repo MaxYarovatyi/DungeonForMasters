@@ -29,10 +29,19 @@ namespace Infrastructure.Data
             return data.IsNullOrEmpty ? null : JsonSerializer.Deserialize<UserGameRooms>(data);
         }
 
-        public async Task<UserGameRooms> UpdateUserGameRooms(UserGameRooms gameRooms)
+        public async Task<UserGameRooms> UpdateUserGameRooms(string id, GameRoom room)
         {
-            var gamerooms = await _database.StringSetAsync(gameRooms.Id, JsonSerializer.Serialize(gameRooms));
-            return await GetUserGameRooms(gameRooms.Id);
+            var data = await GetUserGameRooms(id);
+            var gameRooms = data == null ? new List<GameRoom>() : data.GameRooms;
+            gameRooms.Add(room);
+            var updatedGameRooms = new UserGameRooms
+            {
+                Id = id,
+                GameRooms = gameRooms
+            };
+            var created = await _database.StringSetAsync(id, JsonSerializer.Serialize(updatedGameRooms));
+            if (!created) return null;
+            return await GetUserGameRooms(id);
         }
     }
 }

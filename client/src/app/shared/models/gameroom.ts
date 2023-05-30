@@ -8,5 +8,6 @@ export interface IGameroom {
 export class Gameroom implements IGameroom {
   id: string;
   password: string;
+  mastersId: string;
   sheets = [];
 }

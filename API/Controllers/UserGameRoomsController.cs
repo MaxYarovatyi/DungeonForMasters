@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Core.Entities;
 using Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
@@ -22,12 +23,14 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<UserGameRooms>> GetUserGameRooms(string id)
         {
-            return await _repo.GetUserGameRooms(id);
+            var gamerooms = await _repo.GetUserGameRooms(id);
+            return gamerooms ?? new UserGameRooms(id);
         }
+
         [HttpPost]
-        public async Task<ActionResult<UserGameRooms>> UpdateUserGameRooms(UserGameRooms gameRooms)
+        public async Task<ActionResult<UserGameRooms>> UpdateUserGameRooms(string id, GameRoom gameRoom)
         {
-            return await _repo.UpdateUserGameRooms(gameRooms);
+            return await _repo.UpdateUserGameRooms(id, gameRoom);
         }
     }
 }

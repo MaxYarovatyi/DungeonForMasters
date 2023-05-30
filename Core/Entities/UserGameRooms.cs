@@ -7,7 +7,16 @@ namespace Core.Entities
 {
     public class UserGameRooms
     {
+        public UserGameRooms()
+        {
+        }
+
+        public UserGameRooms(string id)
+        {
+            Id = id;
+        }
+
         public string Id { get; set; }
-        public List<GameRoom> GameRooms { get; set; }
+        public List<GameRoom> GameRooms { get; set; } = new List<GameRoom>();
     }
 }
