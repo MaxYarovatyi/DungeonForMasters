@@ -12,6 +12,8 @@ import { CreateGameroomComponent } from './gameroom/create-gameroom/create-gamer
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GameroomModule } from './gameroom/gameroom.module';
+import { RegisterComponent } from './account/register/register.component';
+import { LoginComponent } from './account/login/login.component';
 
 @NgModule({
   declarations: [

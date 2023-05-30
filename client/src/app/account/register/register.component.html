@@ -1,0 +1,52 @@
+<div
+  class="text-center d-flex flex-column justify-content-center align-items-center"
+  style="height: 100%"
+>
+  <div class="form-signin">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h1 class="h3 mb-3 fw-normal text-center">Create Account</h1>
+
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingName"
+          placeholder="John Doe"
+          formControlName="displayName"
+          matTooltip="This name will be used as Player's name"
+          [matTooltipPosition]="position.value!"
+        />
+        <label for="floatingName">Display Name</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">
+        Sign in
+      </button>
+    </form>
+    <div class="mt-2 d-flex flex-column">
+      <p class="align-self-end">Already have an account?</p>
+      <a class="align-self-end link-secondary" routerLink="/account/login"
+        >Sign In</a
+      >
+    </div>
+  </div>
+</div>
