@@ -18,7 +18,6 @@ import { LoginComponent } from './account/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SheetComponent,
     NavBarComponent,
     HomeComponent,
     CreateGameroomComponent,

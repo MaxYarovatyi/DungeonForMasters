@@ -1,0 +1,104 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <img src="/assets/sheet.png" style="height: 100vh; z-index: -1" />
+  <form [formGroup]="sheetForm">
+    <input
+      formControlName="charName"
+      style="width: 257px; height: 29px; font-size: 25px; top: 54px; left: 45px"
+      type="text"
+    />
+    <input
+      formControlName="playerName"
+      type="text"
+      style="height: 19px; width: 111px; top: 40px; left: 557px"
+    />
+    <fieldset formGroupName="abilityScores">
+      <input
+        formControlName="strength"
+        class="chars"
+        type="text"
+        style="top: 169px"
+      /><input
+        formControlName="dexterity"
+        class="chars"
+        type="text"
+        style="top: 256px"
+      /><input
+        formControlName="constitution"
+        class="chars"
+        type="text"
+        style="top: 347px"
+      /><input
+        formControlName="intelligence"
+        class="chars"
+        type="text"
+        style="top: 432px"
+      /><input
+        formControlName="wisdom"
+        class="chars"
+        type="text"
+        style="top: 520px"
+      /><input
+        formControlName="charisma"
+        class="chars"
+        type="text"
+        style="top: 605px"
+      />
+    </fieldset>
+
+    <fieldset formGroupName="modificators">
+      <input
+        formControlName="strengthModificator"
+        class="modifiers"
+        type="text"
+        style="top: 205px"
+      />
+
+      <input
+        formControlName="dexterityModificator"
+        class="modifiers"
+        type="text"
+        style="top: 295px"
+      />
+
+      <input
+        formControlName="constitutionModificator"
+        class="modifiers"
+        type="text"
+        style="top: 382px"
+      />
+
+      <input
+        formControlName="intelligenceModificator"
+        class="modifiers"
+        type="text"
+        style="top: 470px"
+      />
+
+      <input
+        formControlName="wisdomModificator"
+        class="modifiers"
+        type="text"
+        style="top: 558px"
+      />
+
+      <input
+        formControlName="charismaModificator"
+        class="modifiers"
+        type="text"
+        style="top: 645px"
+      />
+    </fieldset>
+
+    <p
+      id="passiveWisdom"
+      style="
+        width: 30;
+        height: 26;
+        left: 34px;
+        top: 708px;
+        position: absolute;
+        text-align: center;
+      "
+    ></p>
+  </form>
+</div>

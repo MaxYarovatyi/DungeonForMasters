@@ -19,6 +19,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./account/account.module').then((mod) => mod.AccountModule),
   },
+  {
+    path: 'sheet',
+    loadChildren: () =>
+      import('./sheet/sheet.module').then((mod) => mod.SheetModule),
+  },
 ];
 
 @NgModule({

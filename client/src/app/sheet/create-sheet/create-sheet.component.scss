@@ -1,0 +1,41 @@
+$width: 77.3vh;
+input {
+  position: absolute;
+  font-family: "Marck Script";
+  font-weight: 700;
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  text-align: center;
+}
+input.chars {
+  width: 51px;
+  height: 35px;
+  left: 4.8%;
+
+  font-size: 36px;
+}
+input.modifiers {
+  width: 31px;
+  height: 22px;
+  border-radius: 50%;
+  left: 44px;
+  font-size: 20px;
+}
+input:focus-visible {
+  border: 0px transparent;
+  outline: 0;
+}
+div {
+  margin: 0;
+  padding: 0;
+  max-height: 100vh;
+}
+form,
+img {
+  position: fixed;
+  top: 0;
+  left: 27.3vw;
+  width: $width;
+  height: 100vh;
+}

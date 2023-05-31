@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav *ngIf="navBarService.visible" class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <img src="/assets/logo.png" style="max-height: 30px; margin-right: 10px" />
     <a routerLink="" class="navbar-brand">Dungeon for Masters</a>
@@ -9,7 +9,7 @@
           <a routerLink="create_room" class="nav-link">Create Game</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/join_game" class="nav-link">Join game</a>
+          <a routerLink="sheet/create_sheet" class="nav-link">Join game</a>
         </li>
       </ul>
       <ng-container *ngIf="(currentUser$ | async) === null">

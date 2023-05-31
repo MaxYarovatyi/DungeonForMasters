@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { AccountService } from './account/account.service';
+import { CreateGameroomComponent } from './gameroom/create-gameroom/create-gameroom.component';
+import { NavBarService } from './nav-bar/nav-bar.service';
+import { CreateSheetComponent } from './sheet/create-sheet/create-sheet.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +15,10 @@ export class AppComponent implements OnInit {
     this.loadCurrentUser();
   }
   title = 'DungeonForMasters';
-  constructor(private accountService: AccountService) {}
+  constructor(
+    private accountService: AccountService,
+    private navBarService: NavBarService
+  ) {}
 
   loadCurrentUser() {
     const token = localStorage.getItem('token');
@@ -24,5 +30,9 @@ export class AppComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  public onRouterOutletActivate(event: any) {
+    if (event instanceof CreateSheetComponent) this.navBarService.hide();
+    else return this.navBarService.show();
   }
 }
