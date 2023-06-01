@@ -1,104 +1,136 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
-  <img src="/assets/sheet.png" style="height: 100vh; z-index: -1" />
+  <img src="/assets/sheet.png" style="min-height: 100vh; z-index: -1" />
   <form [formGroup]="sheetForm">
-    <input
-      formControlName="charName"
-      style="width: 257px; height: 29px; font-size: 25px; top: 54px; left: 45px"
-      type="text"
-    />
-    <input
-      formControlName="playerName"
-      type="text"
-      style="height: 19px; width: 111px; top: 40px; left: 557px"
-    />
+    <input formControlName="charName" style="width: 257px; height: 29px; font-size: 25px; top: 54px; left: 45px"
+      type="text" />
+
+    <select formControlName="charClass" type="text"
+      style="height: 19px; width: 87px; top: 40px; left: 320px; font-size: 16px">
+      <option *ngFor="let charClass of classes">{{ charClass.name }}</option>
+    </select>
+    <input formControlName="level" type="text"
+      style="height: 19px; width: 21px; top: 40px; left: 410px; font-size: 18px" />
+    <input formControlName="background" type="text" style="height: 19px; width: 111px; top: 40px; left: 434px" />
+    <input formControlName="playerName" type="text" style="height: 19px; width: 111px; top: 40px; left: 557px" />
+    <select formControlName="charRace" type="text" style="
+        height: 19px;
+        width: 111px;
+        top: 72px;
+        left: 320px;
+        font-size: 18px;
+      ">
+      <option *ngFor="let race of races">
+        {{ race.name }}
+      </option>
+    </select>
+    <input formControlName="alignment" type="text" style="height: 19px; width: 111px; top: 72px; left: 434px" />
+    <input formControlName="expiriencePoints" type="text" style="height: 19px; width: 111px; top: 72px; left: 557px" />
+    <input formControlName="armorClass" type="text" style="
+        height: 25px;
+        width: 28px;
+        top: 171px;
+        left: 279px;
+        font-size: 20px;
+      " />
+    <input formControlName="initiative" type="text" style="
+        height: 32px;
+        width: 39px;
+        top: 157px;
+        left: 343px;
+        font-size: 20px;
+      " />
+    <input formControlName="speed" type="text" style="
+        height: 32px;
+        width: 39px;
+        top: 157px;
+        left: 413px;
+        font-size: 20px;
+      " />
+    <input formControlName="maxHitPoints" type="text" style="
+        height: 14px;
+        width: 110px;
+        top: 220px;
+        left: 348px;
+        font-size: 20px;
+      " />
+    <input formControlName="currentHitPoints" type="text" style="
+        height: 33px;
+        width: 132px;
+        top: 243px;
+        left: 302px;
+        font-size: 20px;
+      " />
     <fieldset formGroupName="abilityScores">
-      <input
-        formControlName="strength"
-        class="chars"
-        type="text"
-        style="top: 169px"
-      /><input
-        formControlName="dexterity"
-        class="chars"
-        type="text"
-        style="top: 256px"
-      /><input
-        formControlName="constitution"
-        class="chars"
-        type="text"
-        style="top: 347px"
-      /><input
-        formControlName="intelligence"
-        class="chars"
-        type="text"
-        style="top: 432px"
-      /><input
-        formControlName="wisdom"
-        class="chars"
-        type="text"
-        style="top: 520px"
-      /><input
-        formControlName="charisma"
-        class="chars"
-        type="text"
-        style="top: 605px"
-      />
+      <input formControlName="strength" class="chars" type="text" style="top: 169px" /><input
+        formControlName="dexterity" class="chars" type="text" style="top: 256px" /><input formControlName="constitution"
+        class="chars" type="text" style="top: 347px" /><input formControlName="intelligence" class="chars" type="text"
+        style="top: 432px" /><input formControlName="wisdom" class="chars" type="text" style="top: 520px" /><input
+        formControlName="charisma" class="chars" type="text" style="top: 605px" />
     </fieldset>
 
     <fieldset formGroupName="modificators">
-      <input
-        formControlName="strengthModificator"
-        class="modifiers"
-        type="text"
-        style="top: 205px"
-      />
+      <input formControlName="strengthModificator" class="modifiers" type="text" style="top: 205px" />
 
-      <input
-        formControlName="dexterityModificator"
-        class="modifiers"
-        type="text"
-        style="top: 295px"
-      />
+      <input formControlName="dexterityModificator" class="modifiers" type="text" style="top: 295px" />
 
-      <input
-        formControlName="constitutionModificator"
-        class="modifiers"
-        type="text"
-        style="top: 382px"
-      />
+      <input formControlName="constitutionModificator" class="modifiers" type="text" style="top: 382px" />
 
-      <input
-        formControlName="intelligenceModificator"
-        class="modifiers"
-        type="text"
-        style="top: 470px"
-      />
+      <input formControlName="intelligenceModificator" class="modifiers" type="text" style="top: 470px" />
 
-      <input
-        formControlName="wisdomModificator"
-        class="modifiers"
-        type="text"
-        style="top: 558px"
-      />
+      <input formControlName="wisdomModificator" class="modifiers" type="text" style="top: 558px" />
 
-      <input
-        formControlName="charismaModificator"
-        class="modifiers"
-        type="text"
-        style="top: 645px"
-      />
+      <input formControlName="charismaModificator" class="modifiers" type="text" style="top: 645px" />
     </fieldset>
 
-    <p
-      id="passiveWisdom"
-      style="
+    <p id="passiveWisdom" style="
         width: 30;
         height: 26;
         left: 34px;
         top: 708px;
         position: absolute;
         text-align: center;
-      "
-    ></p>
+      "></p>
+    <fieldset formGroupName="skills">
+      <input type="checkbox" formControlName="acrobatics" style="top: 379px" />
+      <input type="checkbox" formControlName="perception" style="top: 396px" />
+      <input type="checkbox" formControlName="athletics" style="top: 412px" />
+      <input type="checkbox" formControlName="performance" style="top: 429px" />
+      <input type="checkbox" formControlName="survival" style="top: 445px" />
+      <input type="checkbox" formControlName="animalHandling" style="top: 462px" />
+      <input type="checkbox" formControlName="intimidation" style="top: 478px" />
+      <input type="checkbox" formControlName="insight" style="top: 495px" />
+      <input type="checkbox" formControlName="history" style="top: 511px" />
+      <input type="checkbox" formControlName="medicine" style="top: 528px" />
+      <input type="checkbox" formControlName="arcana" style="top: 544px" />
+      <input type="checkbox" formControlName="stealth" style="top: 561px" />
+      <input type="checkbox" formControlName="deception" style="top: 577px" />
+      <input type="checkbox" formControlName="persuasion" style="top: 594px" />
+      <input type="checkbox" formControlName="investigation" style="top: 610px" />
+      <input type="checkbox" formControlName="nature" style="top: 627px" />
+      <input type="checkbox" formControlName="religion" style="top: 643px" />
+      <input type="checkbox" formControlName="sleightOfHand" style="top: 660px" />
+    </fieldset>
+    <p class="skill" id="acrobatics" style="top: 374px"></p>
+    <p class="skill" id="perception" style="top: 390px"></p>
+    <p class="skill" id="athletics" style="top: 407px"></p>
+    <p class="skill" id="performance" style="top: 423px"></p>
+    <p class="skill" id="survival" style="top: 440px">
+
+    </p>
+    <p class="skill" id="animalHandling" style="top: 456px"></p>
+    <p class="skill" id="intimidation" style="top: 473px"></p>
+    <p class="skill" id="insight" style="top: 489px"></p>
+    <p class="skill" id="history" style="top: 506px"></p>
+    <p class="skill" id="medicine" style="top: 522px"></p>
+    <p class="skill" id="arcana" style="top: 539px"></p>
+    <p class="skill" id="stealth" style="top: 555px"></p>
+    <p class="skill" id="deception" style="top: 572px"></p>
+    <p class="skill" id="persuasion" style="top: 588px"></p>
+    <p class="skill" id="investigation" style="top: 605px"></p>
+    <p class="skill" id="nature" style="top: 621px"></p>
+    <p class="skill" id="religion" style="top: 638px"></p>
+    <p class="skill" id="sleightOfHand" style="top: 654px"></p>
+    <p id="proficiencyBonus"
+      style="position:absolute; left: 111px;top:187px; height: 26px;width:27px; font-size: 24px;"></p>
   </form>
 </div>

@@ -1,5 +1,6 @@
 $width: 77.3vh;
-input {
+input,
+select {
   position: absolute;
   font-family: "Marck Script";
   font-weight: 700;
@@ -22,9 +23,15 @@ input.modifiers {
   left: 44px;
   font-size: 20px;
 }
-input:focus-visible {
+input:focus-visible,
+select:focus-visible {
   border: 0px transparent;
   outline: 0;
+}
+input[type="checkbox"] {
+  width: 8px;
+  height: 8px;
+  left: 114px;
 }
 div {
   margin: 0;
@@ -37,5 +44,18 @@ img {
   top: 0;
   left: 27.3vw;
   width: $width;
-  height: 100vh;
+  min-height: 100vh;
+}
+p.skill {
+  height: 12px;
+  width: 20px;
+  left: 126px;
+  position: absolute;
+}
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "Marck Script";
+  text-align: center;
 }

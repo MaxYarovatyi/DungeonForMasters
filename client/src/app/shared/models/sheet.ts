@@ -1,26 +1,26 @@
 export interface Sheet {
   id: number;
-  charName: string;
-  level: number;
-  charClass: CharClass;
-  charClassId: number;
-  charRace: CharRace;
-  charRaceId: number;
-  armorClass: number;
-  playerName: string;
-  expiriencePoints: number;
-  initiative: number;
-  speed: number;
-  abilityScores: AbilityScores;
-  abilityScoresId: number;
+  charName: string; //
+  level: number; //
+  charClass: CharClass; //
+  charClassId: number; //
+  charRace: CharRace; //
+  charRaceId: number; //
+  armorClass: number; //
+  playerName: string; //
+  expiriencePoints: number; //
+  initiative: number; //
+  speed: number; //
+  abilityScores: AbilityScores; //
+  abilityScoresId: number; //
   skills: Skills;
   skillsId: number;
-  background: string;
-  alignment: string;
+  background: string; //
+  alignment: string; //
   currentHitPoints: number;
   maxHitPoints: number;
-  modificators: Modificators;
-  modificatorsId: number;
+  modificators: Modificators; //
+  modificatorsId: number; //
 }
 
 export interface CharClass {
