@@ -1,6 +1,6 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
   <img src="/assets/sheet.png" style="min-height: 100vh; z-index: -1" />
-  <form [formGroup]="sheetForm">
+  <form [formGroup]="sheetForm" (ngSubmit)="onSubmit()">
     <input formControlName="charName" style="width: 257px; height: 29px; font-size: 25px; top: 54px; left: 45px"
       type="text" />
 
@@ -92,7 +92,7 @@
       "></p>
     <fieldset formGroupName="skills">
       <input type="checkbox" formControlName="acrobatics" style="top: 379px" />
-      <input type="checkbox" formControlName="perception" style="top: 396px" />
+      <input type="checkbox" formControlName="investigation" style="top: 396px" />
       <input type="checkbox" formControlName="athletics" style="top: 412px" />
       <input type="checkbox" formControlName="performance" style="top: 429px" />
       <input type="checkbox" formControlName="survival" style="top: 445px" />
@@ -105,13 +105,13 @@
       <input type="checkbox" formControlName="stealth" style="top: 561px" />
       <input type="checkbox" formControlName="deception" style="top: 577px" />
       <input type="checkbox" formControlName="persuasion" style="top: 594px" />
-      <input type="checkbox" formControlName="investigation" style="top: 610px" />
+      <input type="checkbox" formControlName="perception" style="top: 610px" />
       <input type="checkbox" formControlName="nature" style="top: 627px" />
       <input type="checkbox" formControlName="religion" style="top: 643px" />
       <input type="checkbox" formControlName="sleightOfHand" style="top: 660px" />
     </fieldset>
     <p class="skill" id="acrobatics" style="top: 374px"></p>
-    <p class="skill" id="perception" style="top: 390px"></p>
+    <p class="skill" id="investigation" style="top: 390px"></p>
     <p class="skill" id="athletics" style="top: 407px"></p>
     <p class="skill" id="performance" style="top: 423px"></p>
     <p class="skill" id="survival" style="top: 440px">
@@ -126,11 +126,14 @@
     <p class="skill" id="stealth" style="top: 555px"></p>
     <p class="skill" id="deception" style="top: 572px"></p>
     <p class="skill" id="persuasion" style="top: 588px"></p>
-    <p class="skill" id="investigation" style="top: 605px"></p>
+    <p class="skill" id="perception" style="top: 605px"></p>
     <p class="skill" id="nature" style="top: 621px"></p>
     <p class="skill" id="religion" style="top: 638px"></p>
     <p class="skill" id="sleightOfHand" style="top: 654px"></p>
     <p id="proficiencyBonus"
       style="position:absolute; left: 111px;top:187px; height: 26px;width:27px; font-size: 24px;"></p>
+    <button class="btn btn-secondary" (click)="onReturn()"
+      style="position: fixed; top:49vh; left: 10vw;">Return</button>
+    <button class="btn btn-secondary" type="submit" style="position: fixed; top:49vh; right: 10vw;">Submit</button>
   </form>
 </div>

@@ -8,6 +8,8 @@ using API.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Core.Entities.Identity;
 using Infrastructure.Services;
+using API.Helpers;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,18 +20,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddDbContext<SiteContext>(x =>
     x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddDbContext<AppIdentityDbContext>(x =>
     x.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection")));
 builder.Services.AddIdentityServices(builder.Configuration);
-
+builder.Services.AddScoped<IMapper, Mapper>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ISheetRepository, SheetRepository>();
 builder.Services.AddScoped<IGameRoomRepository, GameRoomRepository>();
 builder.Services.AddScoped<IUserGameRoomsRepository, UserGameRoomsRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<ISheetService, SheetService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
 {
     var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true);

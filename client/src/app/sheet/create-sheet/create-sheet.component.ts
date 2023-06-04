@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { CharacterClass } from 'src/app/shared/models/characterClass';
 import { CharacterRace } from 'src/app/shared/models/characterRace';
@@ -18,6 +19,7 @@ import { SheetService } from '../sheet.service';
   styleUrls: ['./create-sheet.component.scss'],
 })
 export class CreateSheetComponent implements OnInit {
+  returnUrl: string;
   sheetForm: FormGroup;
   races: CharacterRace[] = [];
   classes: CharacterClass[] = [];
@@ -63,9 +65,15 @@ export class CreateSheetComponent implements OnInit {
     'stealth',
     'survival',
   ];
-  constructor(private fb: FormBuilder, private sheetService: SheetService) {}
+  constructor(
+    private fb: FormBuilder,
+    private sheetService: SheetService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/';
     this.createForm();
     this.changeModifiers();
     this.getRaces();
@@ -158,8 +166,6 @@ export class CreateSheetComponent implements OnInit {
     }
     document.getElementById('passiveWisdom').innerText =
       10 + this.sheetForm.get('modificators').get('wisdomModificator').value;
-
-    //console.log(this.sheetForm.get('abilityScores').get('strength').value);
   }
   getRaces() {
     this.sheetService.getRaces().subscribe((response: CharacterRace[]) => {
@@ -203,6 +209,33 @@ export class CreateSheetComponent implements OnInit {
         this.changeSkillValues(skill);
       });
     });
+  }
+  onSubmit() {
+    let formValue = this.sheetForm.value;
+    formValue.skills = {
+      acrobatics: +document.getElementById('acrobatics').textContent,
+      animalHandling: +document.getElementById('animalHandling').textContent,
+      arcana: +document.getElementById('arcana').textContent,
+      athletics: +document.getElementById('athletics').textContent,
+      deception: +document.getElementById('deception').textContent,
+      history: +document.getElementById('history').textContent,
+      insight: +document.getElementById('insight').textContent,
+      intimidation: +document.getElementById('intimidation').textContent,
+      investigation: +document.getElementById('investigation').textContent,
+      medicine: +document.getElementById('medicine').textContent,
+      nature: +document.getElementById('nature').textContent,
+      perception: +document.getElementById('perception').textContent,
+      performance: +document.getElementById('performance').textContent,
+      persuasion: +document.getElementById('persuasion').textContent,
+      religion: +document.getElementById('religion').textContent,
+      sleightOfHand: +document.getElementById('sleightOfHand').textContent,
+      stealth: +document.getElementById('stealth').textContent,
+      survival: +document.getElementById('survival').textContent,
+    };
+    console.log(formValue);
+  }
+  onReturn() {
+    this.router.navigateByUrl(this.returnUrl);
   }
   private changeSkillValues(skill: string) {
     let element = document.getElementById(skill);

@@ -46,6 +46,42 @@ namespace Infrastructure.Data
         {
             return await _context.CharacterRaces.ToListAsync();
         }
+        public async Task<CharacterSheet> CreateCharacterSheetAsync(CharacterSheet sheet)
+        {
+            var result = await _context.CharacterSheets.AddAsync(sheet);
+            await _context.SaveChangesAsync();
+            return result.Entity;
+        }
 
+        public async Task<AbilityScores> CreateAbilityScoresAsync(AbilityScores scores)
+        {
+
+            var result = await _context.AbilityScores.AddAsync(scores);
+            await _context.SaveChangesAsync();
+            return result.Entity;
+        }
+
+        public async Task<Modificators> CreateModificatorsAsync(Modificators modificators)
+        {
+            var result = await _context.Modificators.AddAsync(modificators);
+            await _context.SaveChangesAsync();
+            return result.Entity;
+        }
+
+        public async Task<SkillList> CreateSkillsAsync(SkillList skills)
+        {
+            var result = await _context.CharacterSkills.AddAsync(skills);
+            await _context.SaveChangesAsync();
+            return result.Entity;
+        }
+
+        public async Task<CharacterClass> FindCharClass(string charClass)
+        {
+            return await _context.CharacterClasses.Where(e => e.Name == charClass).FirstOrDefaultAsync();
+        }
+        public async Task<CharacterRace> FindCharRace(string charRace)
+        {
+            return await _context.CharacterRaces.Where(e => e.Name == charRace).FirstOrDefaultAsync();
+        }
     }
 }

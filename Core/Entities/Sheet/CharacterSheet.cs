@@ -7,6 +7,10 @@ namespace Core.Entities
 {
     public class CharacterSheet : BaseEntity
     {
+        public CharacterSheet()
+        {
+        }
+
         public string CharName { get; set; }
         public int Level { get; set; }
         public CharacterClass CharClass { get; set; }
@@ -20,7 +24,6 @@ namespace Core.Entities
         public int Speed { get; set; }
         public AbilityScores AbilityScores { get; set; }
         public int AbilityScoresId { get; set; }
-        // public List<Skill> Skills { get; set; }
         public SkillList Skills { get; set; }
         public int SkillsId { get; set; }
         public string Background { get; set; }
