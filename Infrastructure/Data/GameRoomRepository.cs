@@ -34,5 +34,12 @@ namespace Infrastructure.Data
             if (!created) return null;
             return await GetGameRoomAsync(room.Id);
         }
+        public async Task<GameRoom> AddSheetToGameRoom(string id, CharacterSheet sheet)
+        {
+            var gameRoom = JsonSerializer.Deserialize<GameRoom>(await _database.StringGetAsync(id));
+            gameRoom.Sheets.Add(sheet.Id);
+            var created = this.UpdateGameRoomAsync(gameRoom);
+            return await GetGameRoomAsync(gameRoom.Id);
+        }
     }
 }

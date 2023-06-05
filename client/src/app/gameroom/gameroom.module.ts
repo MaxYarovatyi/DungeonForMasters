@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { CreateGameroomComponent } from './create-gameroom/create-gameroom.component';
-import { AppModule } from '../app.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OpenGameroomComponent } from './open-gameroom/open-gameroom.component';
+import { GameroomRoutingModule } from './gameroom-routing.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [OpenGameroomComponent, CreateGameroomComponent],
   imports: [
     CommonModule,
     SharedModule,
-    AppModule,
     FormsModule,
     ReactiveFormsModule,
+    GameroomRoutingModule,
   ],
-  exports: [ReactiveFormsModule, SharedModule],
 })
 export class GameroomModule {}

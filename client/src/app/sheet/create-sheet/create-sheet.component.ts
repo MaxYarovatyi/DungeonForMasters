@@ -7,9 +7,11 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
 import { map, Observable } from 'rxjs';
+import { GameroomService } from 'src/app/gameroom/gameroom.service';
 import { CharacterClass } from 'src/app/shared/models/characterClass';
 import { CharacterRace } from 'src/app/shared/models/characterRace';
-import { CharClass, Skills } from 'src/app/shared/models/sheet';
+import { Gameroom } from 'src/app/shared/models/gameroom';
+import { CharClass, Sheet, Skills } from 'src/app/shared/models/sheet';
 import { User } from 'src/app/shared/models/user';
 import { AccountService } from '../../account/account.service';
 import { SheetService } from '../sheet.service';
@@ -69,7 +71,8 @@ export class CreateSheetComponent implements OnInit {
     private fb: FormBuilder,
     private sheetService: SheetService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private gameroomService: GameroomService
   ) {}
 
   ngOnInit(): void {
@@ -91,28 +94,28 @@ export class CreateSheetComponent implements OnInit {
       charRace: ['', [Validators.required]],
       background: ['', [Validators.required]],
       alignment: ['', [Validators.required]],
-      level: ['', [Validators.required]],
-      expiriencePoints: ['', [Validators.required]],
-      armorClass: ['', [Validators.required]],
-      initiative: ['', [Validators.required]],
-      speed: ['', [Validators.required]],
-      maxHitPoints: ['', [Validators.required]],
-      currentHitPoints: ['', [Validators.required]],
+      level: [0, [Validators.required]],
+      expiriencePoints: [0, [Validators.required]],
+      armorClass: [0, [Validators.required]],
+      initiative: [0, [Validators.required]],
+      speed: [0, [Validators.required]],
+      maxHitPoints: [0, [Validators.required]],
+      currentHitPoints: [0, [Validators.required]],
       abilityScores: this.fb.group({
-        strength: ['', [Validators.required]],
-        dexterity: ['', [Validators.required]],
-        constitution: ['', [Validators.required]],
-        intelligence: ['', [Validators.required]],
-        wisdom: ['', [Validators.required]],
-        charisma: ['', [Validators.required]],
+        strength: [0, [Validators.required]],
+        dexterity: [0, [Validators.required]],
+        constitution: [0, [Validators.required]],
+        intelligence: [0, [Validators.required]],
+        wisdom: [0, [Validators.required]],
+        charisma: [0, [Validators.required]],
       }),
       modificators: this.fb.group({
-        strengthModificator: ['', [Validators.required]],
-        dexterityModificator: ['', [Validators.required]],
-        constitutionModificator: ['', [Validators.required]],
-        intelligenceModificator: ['', [Validators.required]],
-        wisdomModificator: ['', [Validators.required]],
-        charismaModificator: ['', [Validators.required]],
+        strengthModificator: [0, [Validators.required]],
+        dexterityModificator: [0, [Validators.required]],
+        constitutionModificator: [0, [Validators.required]],
+        intelligenceModificator: [0, [Validators.required]],
+        wisdomModificator: [0, [Validators.required]],
+        charismaModificator: [0, [Validators.required]],
       }),
       skills: this.fb.group({
         acrobatics: [false, []],
@@ -232,7 +235,22 @@ export class CreateSheetComponent implements OnInit {
       stealth: +document.getElementById('stealth').textContent,
       survival: +document.getElementById('survival').textContent,
     };
-    console.log(formValue);
+    formValue.charClass = (<HTMLSelectElement>(
+      document.getElementById('charClass')
+    )).value;
+    formValue.charRace = (<HTMLSelectElement>(
+      document.getElementById('charRace')
+    )).value;
+    this.sheetService.createSheet(formValue).subscribe((response: Sheet) => {
+      this.gameroomService
+        .addSheetToGameRoom(
+          this.gameroomService.getCurrentGameRoom().id,
+          response
+        )
+        .subscribe((value) => {
+          this.router.navigateByUrl('/gameroom/open');
+        });
+    });
   }
   onReturn() {
     this.router.navigateByUrl(this.returnUrl);

@@ -4,7 +4,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 import { CreateGameroomComponent } from './gameroom/create-gameroom/create-gameroom.component';
 import { HomeComponent } from './home/home.component';
-import { SheetComponent } from './sheet/sheet.component';
+import { SheetComponent } from './sheet/open-sheet/sheet.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'sheet',
     loadChildren: () =>
       import('./sheet/sheet.module').then((mod) => mod.SheetModule),
+  },
+  {
+    path: 'gameroom',
+    loadChildren: () =>
+      import('./gameroom/gameroom.module').then((mod) => mod.GameroomModule),
   },
 ];
 

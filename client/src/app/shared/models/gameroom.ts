@@ -3,7 +3,7 @@ import { Sheet } from '../models/sheet';
 export interface IGameroom {
   id: string;
   password: string;
-  sheets: Sheet[];
+  sheets: number[];
 }
 export class Gameroom implements IGameroom {
   id: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Sheet } from '../shared/models/sheet';
-import { SheetService } from './sheet.service';
+import { Sheet } from '../../shared/models/sheet';
+import { SheetService } from '../sheet.service';
 
 @Component({
   selector: 'app-sheet',

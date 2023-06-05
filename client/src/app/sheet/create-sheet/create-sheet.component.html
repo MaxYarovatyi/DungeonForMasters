@@ -4,7 +4,7 @@
     <input formControlName="charName" style="width: 257px; height: 29px; font-size: 25px; top: 54px; left: 45px"
       type="text" />
 
-    <select formControlName="charClass" type="text"
+    <select formControlName="charClass" type="text" id="charClass"
       style="height: 19px; width: 87px; top: 40px; left: 320px; font-size: 16px">
       <option *ngFor="let charClass of classes">{{ charClass.name }}</option>
     </select>
@@ -12,7 +12,7 @@
       style="height: 19px; width: 21px; top: 40px; left: 410px; font-size: 18px" />
     <input formControlName="background" type="text" style="height: 19px; width: 111px; top: 40px; left: 434px" />
     <input formControlName="playerName" type="text" style="height: 19px; width: 111px; top: 40px; left: 557px" />
-    <select formControlName="charRace" type="text" style="
+    <select formControlName="charRace" id="charRace" type="text" style="
         height: 19px;
         width: 111px;
         top: 72px;

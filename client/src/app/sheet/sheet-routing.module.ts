@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateSheetComponent } from './create-sheet/create-sheet.component';
-import { SheetComponent } from './sheet.component';
+import { SheetComponent } from './open-sheet/sheet.component';
 
 const routes: Routes = [
   { path: 'create_sheet', component: CreateSheetComponent },

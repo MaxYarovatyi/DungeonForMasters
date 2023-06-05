@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Entities.Identity;
 
 namespace Core.Entities
 {
@@ -19,6 +20,6 @@ namespace Core.Entities
         public string Id { get; set; }
         public string Password { get; set; }
         public string MastersId { get; set; }
-        public List<CharacterSheet> Sheets { get; set; } = new List<CharacterSheet>();
+        public List<int> Sheets { get; set; } = new List<int>();
     }
 }

@@ -11,5 +11,6 @@ namespace Core.Interfaces
         Task<GameRoom> GetGameRoomAsync(string id);
         Task<GameRoom> UpdateGameRoomAsync(GameRoom room);
         Task<bool> DeleteGameRoomAsync(string id);
+        Task<GameRoom> AddSheetToGameRoom(string id, CharacterSheet sheet);
     }
 }

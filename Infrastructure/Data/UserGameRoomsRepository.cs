@@ -32,8 +32,8 @@ namespace Infrastructure.Data
         public async Task<UserGameRooms> UpdateUserGameRooms(string id, GameRoom room)
         {
             var data = await GetUserGameRooms(id);
-            var gameRooms = data == null ? new List<GameRoom>() : data.GameRooms;
-            gameRooms.Add(room);
+            var gameRooms = data == null ? new List<string>() : data.GameRooms;
+            gameRooms.Add(room.Id);
             var updatedGameRooms = new UserGameRooms
             {
                 Id = id,

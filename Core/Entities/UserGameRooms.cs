@@ -17,7 +17,7 @@ namespace Core.Entities
         }
 
         public string Id { get; set; }
-        public List<GameRoom> GameRooms { get; set; } = new List<GameRoom>();
-        public List<CharacterSheet> Sheets { get; set; } = new List<CharacterSheet>();
+        public List<string> GameRooms { get; set; } = new List<string>();
+        public List<string> Sheets { get; set; } = new List<string>();
     }
 }
