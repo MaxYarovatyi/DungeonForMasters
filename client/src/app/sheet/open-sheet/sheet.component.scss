@@ -1,0 +1,299 @@
+$height: 939px;
+$width: 726.21px;
+$koef: 1;
+$actualWidth: $width/$koef;
+$actualHeight: $height/$koef;
+@function getWidthPercentage($leftOffset, $actualWidth) {
+  @return ($leftOffset/$actualWidth) * 100%;
+}
+@function getHeightPercentage($topOffset, $actualHeight) {
+  @return ($topOffset)/ ($actualHeight) * 100%;
+}
+div.list {
+  height: $actualHeight;
+  width: $actualWidth;
+  background-image: url("../../../assets/sheet.png");
+  background-size: cover;
+  margin: 0 !important;
+  position: relative;
+}
+div.wrapper {
+  margin: 0 !important;
+  height: $actualHeight/$koef + 10px;
+  width: $actualWidth/$koef;
+}
+h1 {
+  font: 700;
+  font-family: "Marck Script";
+  font-size: 20px;
+}
+p {
+  position: absolute;
+  font-family: "Marck Script";
+  font-size: 20px;
+  justify-content: center;
+  padding: 0%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+p#charName {
+  top: getHeightPercentage(54px, $height);
+  left: getWidthPercentage(45px, $width);
+  width: getWidthPercentage(257px, $height);
+  height: getHeightPercentage(29px, $width);
+}
+p#charClass {
+  top: getHeightPercentage(40px, $height);
+  left: getWidthPercentage(320px, $width);
+  width: getWidthPercentage(87px, $height);
+  height: getHeightPercentage(19px, $width);
+}
+p#charRace {
+  top: getHeightPercentage(72px, $height);
+  left: getWidthPercentage(320px, $width);
+  width: getWidthPercentage(111px, $height);
+  height: getHeightPercentage(19px, $width);
+}
+p#level {
+  top: getHeightPercentage(40px, $height);
+  left: getWidthPercentage(410px, $width);
+  width: getWidthPercentage(21px, $height);
+  height: getHeightPercentage(19px, $width);
+}
+p#alignment {
+  top: getHeightPercentage(72px, $height);
+  left: getWidthPercentage(434px, $width);
+  width: getWidthPercentage(111px, $height);
+  height: getHeightPercentage(19px, $width);
+}
+p#background {
+  top: getHeightPercentage(40px, $height);
+  left: getWidthPercentage(434px, $width);
+  width: getWidthPercentage(111px, $height);
+  height: getHeightPercentage(19px, $width);
+}
+p#expiriencePoints {
+  top: getHeightPercentage(72px, $height);
+  left: getWidthPercentage(557px, $width);
+  width: getWidthPercentage(111px, $height);
+  height: getHeightPercentage(19px, $width);
+}
+p#playerName {
+  top: getHeightPercentage(40px, $height);
+  left: getWidthPercentage(557px, $width);
+  width: getWidthPercentage(111px, $height);
+  height: getHeightPercentage(19px, $width);
+}
+p#speed {
+  top: getHeightPercentage(157px, $height);
+  left: getWidthPercentage(414px, $width);
+  width: getWidthPercentage(39px, $height);
+  height: getHeightPercentage(32px, $width);
+}
+p#armorClass {
+  top: getHeightPercentage(171px, $height);
+  left: getWidthPercentage(279px, $width);
+  width: getWidthPercentage(28px, $height);
+  height: getHeightPercentage(25px, $width);
+}
+p#initiative {
+  top: getHeightPercentage(157px, $height);
+  left: getWidthPercentage(343px, $width);
+  width: getWidthPercentage(39px, $height);
+  height: getHeightPercentage(32px, $width);
+}
+p#maxHitPoints {
+  top: getHeightPercentage(220px, $height);
+  left: getWidthPercentage(348px, $width);
+  width: getWidthPercentage(110px, $height);
+  height: getHeightPercentage(14px, $width);
+}
+p#currentHitPoints {
+  top: getHeightPercentage(243px, $height);
+  left: getWidthPercentage(302px, $width);
+  width: getWidthPercentage(132px, $height);
+  height: getHeightPercentage(33px, $width);
+}
+p#proficiencyBonus {
+  top: getHeightPercentage(187px, $height);
+  left: getWidthPercentage(111px, $width);
+  width: getWidthPercentage(27px, $width);
+  height: getWidthPercentage(27px, $width);
+}
+p#passiveWisdom {
+  top: getHeightPercentage(702px, $height);
+  left: getWidthPercentage(30px, $width);
+  width: getWidthPercentage(30px, $width);
+  height: getWidthPercentage(30px, $width);
+}
+p.abilityScores {
+  left: getWidthPercentage(35px, $width);
+  height: getHeightPercentage(36px, $height);
+  width: getWidthPercentage(51px, $width);
+}
+p.modifiers {
+  left: getWidthPercentage(45px, $width);
+  width: getWidthPercentage(31px, $width);
+  height: getHeightPercentage(22px, $width);
+}
+
+p#strength {
+  top: getHeightPercentage(169px, $height);
+}
+p#strengthModifier {
+  top: getHeightPercentage(207px, $height);
+}
+p#dexterity {
+  top: getHeightPercentage(257px, $height);
+}
+p#dexterityModifier {
+  top: getHeightPercentage(295px, $height);
+}
+p#constitution {
+  top: getHeightPercentage(344px, $height);
+}
+p#constitutionModifier {
+  top: getHeightPercentage(382px, $height);
+}
+p#intelligence {
+  top: getHeightPercentage(432px, $height);
+}
+p#intelligenceModifier {
+  top: getHeightPercentage(470px, $height);
+}
+p#wisdom {
+  top: getHeightPercentage(520px, $height);
+}
+p#wisdomModifier {
+  top: getHeightPercentage(558px, $height);
+}
+p#charisma {
+  top: getHeightPercentage(605px, $height);
+}
+p#charismaModifier {
+  top: getHeightPercentage(645px, $height);
+}
+p.checkSkill {
+  width: getWidthPercentage(4px, $width);
+  height: getWidthPercentage(4px, $width);
+  border-radius: 50%;
+  background-color: transparent;
+  left: getWidthPercentage(116px, $width);
+}
+p.checked {
+  background-color: black;
+}
+p.skill {
+  width: getWidthPercentage(20px, $width);
+  height: getHeightPercentage(12px, $height);
+  left: getWidthPercentage(126px, $width);
+}
+p#acrobaticsCheck {
+  top: getHeightPercentage(379px, $height);
+}
+p#acrobatics {
+  top: getHeightPercentage(374px, $height);
+}
+p#investigationCheck {
+  top: getHeightPercentage(396px, $height);
+}
+p#investigation {
+  top: getHeightPercentage(390px, $height);
+}
+p#athleticsCheck {
+  top: getHeightPercentage(412px, $height);
+}
+p#athletics {
+  top: getHeightPercentage(407px, $height);
+}
+p#performanceCheck {
+  top: getHeightPercentage(429px, $height);
+}
+p#performance {
+  top: getHeightPercentage(423px, $height);
+}
+p#survivalCheck {
+  top: getHeightPercentage(445px, $height);
+}
+p#survival {
+  top: getHeightPercentage(440px, $height);
+}
+p#animalHandlingCheck {
+  top: getHeightPercentage(462px, $height);
+}
+p#animalHandling {
+  top: getHeightPercentage(456px, $height);
+}
+p#intimidationCheck {
+  top: getHeightPercentage(478px, $height);
+}
+p#intimidation {
+  top: getHeightPercentage(473px, $height);
+}
+p#insightCheck {
+  top: getHeightPercentage(495px, $height);
+}
+p#insight {
+  top: getHeightPercentage(489px, $height);
+}
+p#historyCheck {
+  top: getHeightPercentage(511px, $height);
+}
+p#history {
+  top: getHeightPercentage(506px, $height);
+}
+p#medicineCheck {
+  top: getHeightPercentage(528px, $height);
+}
+p#medicine {
+  top: getHeightPercentage(522px, $height);
+}
+p#arcanaCheck {
+  top: getHeightPercentage(544px, $height);
+}
+p#arcana {
+  top: getHeightPercentage(539px, $height);
+}
+p#stealthCheck {
+  top: getHeightPercentage(561px, $height);
+}
+p#stealth {
+  top: getHeightPercentage(555px, $height);
+}
+p#deceptionCheck {
+  top: getHeightPercentage(577px, $height);
+}
+p#deception {
+  top: getHeightPercentage(572px, $height);
+}
+p#persuasionCheck {
+  top: getHeightPercentage(594px, $height);
+}
+p#persuasion {
+  top: getHeightPercentage(588px, $height);
+}
+p#perceptionCheck {
+  top: getHeightPercentage(610px, $height);
+}
+p#perception {
+  top: getHeightPercentage(605px, $height);
+}
+p#natureCheck {
+  top: getHeightPercentage(627px, $height);
+}
+p#nature {
+  top: getHeightPercentage(621px, $height);
+}
+p#religionCheck {
+  top: getHeightPercentage(643px, $height);
+}
+p#religion {
+  top: getHeightPercentage(638px, $height);
+}
+p#sleightOfHandCheck {
+  top: getHeightPercentage(660px, $height);
+}
+p#sleightOfHand {
+  top: getHeightPercentage(654px, $height);
+}
