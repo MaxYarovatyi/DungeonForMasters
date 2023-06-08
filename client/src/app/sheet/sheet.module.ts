@@ -8,5 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [CreateSheetComponent, SheetComponent],
   imports: [CommonModule, SheetRoutingModule, SharedModule],
+  exports: [SheetComponent],
 })
 export class SheetModule {}

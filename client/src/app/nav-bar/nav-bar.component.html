@@ -6,59 +6,32 @@
     <div class="navbar-collapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a routerLink="create_room" class="nav-link">Create Game</a>
+          <a routerLink="gameroom/create_room" class="nav-link">Create Game</a>
         </li>
         <li class="nav-item">
-          <a routerLink="sheet/create_sheet" class="nav-link">Join game</a>
+          <a routerLink="gameroom/join" class="nav-link">Join game</a>
         </li>
       </ul>
       <ng-container *ngIf="(currentUser$ | async) === null">
         <div>
-          <a
-            routerLink="/account/login"
-            class="btn btn-outline-secondary mr-2"
-            style="margin-right: 20px"
-            >Login</a
-          >
-          <a
-            routerLink="/account/register"
-            class="btn btn-outline-secondary mr-2"
-            >Sign up</a
-          >
+          <a routerLink="/account/login" class="btn btn-outline-secondary mr-2" style="margin-right: 20px">Login</a>
+          <a routerLink="/account/register" class="btn btn-outline-secondary mr-2">Sign up</a>
         </div>
       </ng-container>
       <ng-container *ngIf="currentUser$ | async as user">
         <div class="dropdown ml-3 mr-5" dropdown>
-          <a
-            class="dropdown-toggle btn btn-outline-secondary mr-2"
-            style="cursor: pointer"
-            dropdownToggle
-          >
-            <strong>Welcome, {{ user.displayName }}</strong></a
-          >
-          <div
-            class="dropdown-menu dropdown-menu-right"
-            style="cursor: pointer"
-            *dropdownMenu
-          >
-            <a
-              routerLink=""
-              class="dropdown-item d-flex align-items-center py-2"
-            >
+          <a class="dropdown-toggle btn btn-outline-secondary mr-2" style="cursor: pointer" dropdownToggle>
+            <strong>Welcome, {{ user.displayName }}</strong></a>
+          <div class="dropdown-menu dropdown-menu-right" style="cursor: pointer" *dropdownMenu>
+            <a routerLink="" class="dropdown-item d-flex align-items-center py-2">
               View Game Rooms
             </a>
 
-            <a
-              routerLink=""
-              class="dropdown-item d-flex align-items-center py-2"
-            >
+            <a routerLink="" class="dropdown-item d-flex align-items-center py-2">
               Profile
             </a>
             <div class="dropdown-divider"></div>
-            <a
-              (click)="logout()"
-              class="dropdown-item d-flex align-items-center py-2"
-            >
+            <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
               <i class="fa fa-out mr-3"></i> Logut
             </a>
           </div>

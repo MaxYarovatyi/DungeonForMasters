@@ -37,91 +37,91 @@ p {
   display: flex;
   align-items: center;
 }
-p#charName {
+p.charName {
   top: getHeightPercentage(54px, $height);
   left: getWidthPercentage(45px, $width);
   width: getWidthPercentage(257px, $height);
   height: getHeightPercentage(29px, $width);
 }
-p#charClass {
+p.charClass {
   top: getHeightPercentage(40px, $height);
   left: getWidthPercentage(320px, $width);
   width: getWidthPercentage(87px, $height);
   height: getHeightPercentage(19px, $width);
 }
-p#charRace {
+p.charRace {
   top: getHeightPercentage(72px, $height);
   left: getWidthPercentage(320px, $width);
   width: getWidthPercentage(111px, $height);
   height: getHeightPercentage(19px, $width);
 }
-p#level {
+p.level {
   top: getHeightPercentage(40px, $height);
   left: getWidthPercentage(410px, $width);
   width: getWidthPercentage(21px, $height);
   height: getHeightPercentage(19px, $width);
 }
-p#alignment {
+p.alignment {
   top: getHeightPercentage(72px, $height);
   left: getWidthPercentage(434px, $width);
   width: getWidthPercentage(111px, $height);
   height: getHeightPercentage(19px, $width);
 }
-p#background {
+p.background {
   top: getHeightPercentage(40px, $height);
   left: getWidthPercentage(434px, $width);
   width: getWidthPercentage(111px, $height);
   height: getHeightPercentage(19px, $width);
 }
-p#expiriencePoints {
+p.expiriencePoints {
   top: getHeightPercentage(72px, $height);
   left: getWidthPercentage(557px, $width);
   width: getWidthPercentage(111px, $height);
   height: getHeightPercentage(19px, $width);
 }
-p#playerName {
+p.playerName {
   top: getHeightPercentage(40px, $height);
   left: getWidthPercentage(557px, $width);
   width: getWidthPercentage(111px, $height);
   height: getHeightPercentage(19px, $width);
 }
-p#speed {
+p.speed {
   top: getHeightPercentage(157px, $height);
   left: getWidthPercentage(414px, $width);
   width: getWidthPercentage(39px, $height);
   height: getHeightPercentage(32px, $width);
 }
-p#armorClass {
+p.armorClass {
   top: getHeightPercentage(171px, $height);
   left: getWidthPercentage(279px, $width);
   width: getWidthPercentage(28px, $height);
   height: getHeightPercentage(25px, $width);
 }
-p#initiative {
+p.initiative {
   top: getHeightPercentage(157px, $height);
   left: getWidthPercentage(343px, $width);
   width: getWidthPercentage(39px, $height);
   height: getHeightPercentage(32px, $width);
 }
-p#maxHitPoints {
+p.maxHitPoints {
   top: getHeightPercentage(220px, $height);
   left: getWidthPercentage(348px, $width);
   width: getWidthPercentage(110px, $height);
   height: getHeightPercentage(14px, $width);
 }
-p#currentHitPoints {
+p.currentHitPoints {
   top: getHeightPercentage(243px, $height);
   left: getWidthPercentage(302px, $width);
   width: getWidthPercentage(132px, $height);
   height: getHeightPercentage(33px, $width);
 }
-p#proficiencyBonus {
+p.proficiencyBonus {
   top: getHeightPercentage(187px, $height);
   left: getWidthPercentage(111px, $width);
   width: getWidthPercentage(27px, $width);
   height: getWidthPercentage(27px, $width);
 }
-p#passiveWisdom {
+p.passiveWisdom {
   top: getHeightPercentage(702px, $height);
   left: getWidthPercentage(30px, $width);
   width: getWidthPercentage(30px, $width);
@@ -138,40 +138,40 @@ p.modifiers {
   height: getHeightPercentage(22px, $width);
 }
 
-p#strength {
+p.strength {
   top: getHeightPercentage(169px, $height);
 }
-p#strengthModifier {
+p.strengthModifier {
   top: getHeightPercentage(207px, $height);
 }
-p#dexterity {
+p.dexterity {
   top: getHeightPercentage(257px, $height);
 }
-p#dexterityModifier {
+p.dexterityModifier {
   top: getHeightPercentage(295px, $height);
 }
-p#constitution {
+p.constitution {
   top: getHeightPercentage(344px, $height);
 }
-p#constitutionModifier {
+p.constitutionModifier {
   top: getHeightPercentage(382px, $height);
 }
-p#intelligence {
+p.intelligence {
   top: getHeightPercentage(432px, $height);
 }
-p#intelligenceModifier {
+p.intelligenceModifier {
   top: getHeightPercentage(470px, $height);
 }
-p#wisdom {
+p.wisdom {
   top: getHeightPercentage(520px, $height);
 }
-p#wisdomModifier {
+p.wisdomModifier {
   top: getHeightPercentage(558px, $height);
 }
-p#charisma {
+p.charisma {
   top: getHeightPercentage(605px, $height);
 }
-p#charismaModifier {
+p.charismaModifier {
   top: getHeightPercentage(645px, $height);
 }
 p.checkSkill {
@@ -189,111 +189,111 @@ p.skill {
   height: getHeightPercentage(12px, $height);
   left: getWidthPercentage(126px, $width);
 }
-p#acrobaticsCheck {
+p.acrobaticsCheck {
   top: getHeightPercentage(379px, $height);
 }
-p#acrobatics {
+p.acrobatics {
   top: getHeightPercentage(374px, $height);
 }
-p#investigationCheck {
+p.investigationCheck {
   top: getHeightPercentage(396px, $height);
 }
-p#investigation {
+p.investigation {
   top: getHeightPercentage(390px, $height);
 }
-p#athleticsCheck {
+p.athleticsCheck {
   top: getHeightPercentage(412px, $height);
 }
-p#athletics {
+p.athletics {
   top: getHeightPercentage(407px, $height);
 }
-p#performanceCheck {
+p.performanceCheck {
   top: getHeightPercentage(429px, $height);
 }
-p#performance {
+p.performance {
   top: getHeightPercentage(423px, $height);
 }
-p#survivalCheck {
+p.survivalCheck {
   top: getHeightPercentage(445px, $height);
 }
-p#survival {
+p.survival {
   top: getHeightPercentage(440px, $height);
 }
-p#animalHandlingCheck {
+p.animalHandlingCheck {
   top: getHeightPercentage(462px, $height);
 }
-p#animalHandling {
+p.animalHandling {
   top: getHeightPercentage(456px, $height);
 }
-p#intimidationCheck {
+p.intimidationCheck {
   top: getHeightPercentage(478px, $height);
 }
-p#intimidation {
+p.intimidation {
   top: getHeightPercentage(473px, $height);
 }
-p#insightCheck {
+p.insightCheck {
   top: getHeightPercentage(495px, $height);
 }
-p#insight {
+p.insight {
   top: getHeightPercentage(489px, $height);
 }
-p#historyCheck {
+p.historyCheck {
   top: getHeightPercentage(511px, $height);
 }
-p#history {
+p.history {
   top: getHeightPercentage(506px, $height);
 }
-p#medicineCheck {
+p.medicineCheck {
   top: getHeightPercentage(528px, $height);
 }
-p#medicine {
+p.medicine {
   top: getHeightPercentage(522px, $height);
 }
-p#arcanaCheck {
+p.arcanaCheck {
   top: getHeightPercentage(544px, $height);
 }
-p#arcana {
+p.arcana {
   top: getHeightPercentage(539px, $height);
 }
-p#stealthCheck {
+p.stealthCheck {
   top: getHeightPercentage(561px, $height);
 }
-p#stealth {
+p.stealth {
   top: getHeightPercentage(555px, $height);
 }
-p#deceptionCheck {
+p.deceptionCheck {
   top: getHeightPercentage(577px, $height);
 }
-p#deception {
+p.deception {
   top: getHeightPercentage(572px, $height);
 }
-p#persuasionCheck {
+p.persuasionCheck {
   top: getHeightPercentage(594px, $height);
 }
-p#persuasion {
+p.persuasion {
   top: getHeightPercentage(588px, $height);
 }
-p#perceptionCheck {
+p.perceptionCheck {
   top: getHeightPercentage(610px, $height);
 }
-p#perception {
+p.perception {
   top: getHeightPercentage(605px, $height);
 }
-p#natureCheck {
+p.natureCheck {
   top: getHeightPercentage(627px, $height);
 }
-p#nature {
+p.nature {
   top: getHeightPercentage(621px, $height);
 }
-p#religionCheck {
+p.religionCheck {
   top: getHeightPercentage(643px, $height);
 }
-p#religion {
+p.religion {
   top: getHeightPercentage(638px, $height);
 }
-p#sleightOfHandCheck {
+p.sleightOfHandCheck {
   top: getHeightPercentage(660px, $height);
 }
-p#sleightOfHand {
+p.sleightOfHand {
   top: getHeightPercentage(654px, $height);
 }

@@ -17,7 +17,7 @@ export class SheetService {
     this.getRaces();
   }
 
-  getSheetById(id: number) {
+  getSheetById(id: string) {
     return this.http.get(this.baseUrl + 'sheets/' + id);
   }
   getRaces() {
