@@ -50,7 +50,7 @@ export class CreateGameroomComponent implements OnInit {
       })
       .subscribe({
         next: (response) => {
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('gameroom/open');
         },
         error: (error) => {
           console.log(error);

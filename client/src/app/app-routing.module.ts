@@ -29,6 +29,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./gameroom/gameroom.module').then((mod) => mod.GameroomModule),
   },
+  {
+    path: 'user',
+    loadChildren: () =>
+      import(
+        './user-gamerooms-and-sheets/user-gamerooms-and-sheets.module'
+      ).then((mod) => mod.UserGameroomsAndSheetsModule),
+  },
 ];
 
 @NgModule({

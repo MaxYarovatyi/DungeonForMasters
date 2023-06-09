@@ -1,0 +1,8 @@
+<div style="width: 100%; text-align:center; height: 40px;margin-top:60px">This is your gamerooms!</div>
+<div class="wrapper">
+  <div class="gameroom" *ngFor="let gameroom of userGameRooms">
+    <p> {{gameroom.id}} </p>
+    <a [routerLink]="['/gameroom/open']" [queryParams]="{gameRoomId: gameroom.id}"><button
+        class="btn btn-primary">Join</button></a>
+  </div>
+</div>

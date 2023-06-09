@@ -1,3 +1,11 @@
-<div class="wrapper">
-  <app-sheet *ngFor="let sheet of currentSheets" [sheetId]=sheet>{{sheet}}</app-sheet>
-</div>
+<ng-container *ngIf="currentMasterId==currentUser.id">
+  <div class="wrapper">
+
+    <app-sheet *ngFor="let sheet of currentSheets" [sheetId]=sheet></app-sheet>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentMasterId!=currentUser.id">
+  <div *ngIf="currentUserSheetId" class="singleSheet">
+    <app-sheet [sheetId]='currentUserSheetId'></app-sheet>
+  </div>
+</ng-container>

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, map, of } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { User } from '../shared/models/user';
+import { UserGameroomsAndSheetsService } from '../user-gamerooms-and-sheets/user-gamerooms-and-sheets.service';
 
 @Injectable({
   providedIn: 'root',
@@ -50,6 +51,9 @@ export class AccountService {
     localStorage.removeItem('token');
     this.currentUserSource.next(null);
     this.router.navigateByUrl('/');
+  }
+  getCurrentUser() {
+    return this.currentUserSource.getValue();
   }
   checkEmailExists(email: string) {
     return this.http.get(this.baseUrl + 'account/emailexists?email=' + email);

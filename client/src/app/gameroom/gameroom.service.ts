@@ -59,6 +59,9 @@ export class GameroomService {
   addGameRoomToUsersGameRooms(id: string, gameroom: Gameroom) {
     return this.http.post(this.baseUrl + 'usergamerooms?id=' + id, gameroom);
   }
+  getUserGamerooms(id: string) {
+    return this.http.get(this.baseUrl + 'usergamerooms?id=' + id);
+  }
   checkPassword(id: string, password: string) {
     return this.http.get(
       this.baseUrl + 'gameRoom/checkPassword?id=' + id + '&password=' + password

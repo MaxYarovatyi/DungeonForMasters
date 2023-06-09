@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GameroomModule } from './gameroom/gameroom.module';
 import { RegisterComponent } from './account/register/register.component';
 import { LoginComponent } from './account/login/login.component';
+import { UserGameroomsComponent } from './user-gamerooms-and-sheets/user-gamerooms/user-gamerooms.component';
+import { UserSheetsComponent } from './user-gamerooms-and-sheets/user-sheets/user-sheets.component';
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent, HomeComponent],

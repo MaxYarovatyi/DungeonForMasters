@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   AbstractControlOptions,
   FormBuilder,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs';
+import { AccountService } from 'src/app/account/account.service';
 import { Gameroom } from 'src/app/shared/models/gameroom';
 import { Sheet } from 'src/app/shared/models/sheet';
+import { User } from 'src/app/shared/models/user';
+import { UserGameRooms } from 'src/app/shared/models/userGameRooms';
 import { SheetService } from 'src/app/sheet/sheet.service';
 import { GameroomService } from '../gameroom.service';
 
@@ -18,24 +21,57 @@ import { GameroomService } from '../gameroom.service';
   styleUrls: ['./open-gameroom.component.scss'],
 })
 export class OpenGameroomComponent implements OnInit {
+  gameRoomId: string;
   currentGameRoom: Gameroom;
   currentSheets: number[];
+  currentMasterId: string;
+  currentUser: User;
+  currentUserSheetId: string;
+  currentUserSheets: number[];
   ngOnInit(): void {
+    this.currentUser = this.accountService.getCurrentUser();
     this.loadGameRoom();
+    this.loadUserSheet();
   }
   constructor(
     private gameroomService: GameroomService,
-    private sheetService: SheetService
-  ) {}
+    private sheetService: SheetService,
+    private accountService: AccountService,
+    private activatedRoot: ActivatedRoute
+  ) {
+    activatedRoot.queryParams.subscribe(
+      (params) => (this.gameRoomId = params['gameRoomId'])
+    );
+  }
 
   loadGameRoom() {
     this.gameroomService
-      .getGameRoom('maxmax')
+      .getGameRoom(
+        this.gameRoomId == undefined
+          ? this.gameroomService.getCurrentGameRoom().id
+          : this.gameRoomId
+      )
       .subscribe((response: Gameroom) => {
-        console.log(response);
-        this.gameroomService.setCurrentGameRoom(response);
-        this.currentGameRoom = this.gameroomService.getCurrentGameRoom();
+        this.currentGameRoom = response;
+        this.currentMasterId = this.currentGameRoom.mastersId;
         this.currentSheets = this.currentGameRoom.sheets;
+      });
+  }
+  loadUserSheet() {
+    this.gameroomService
+      .getUserGamerooms(this.currentUser.id)
+      .subscribe((resp: UserGameRooms) => {
+        this.currentUserSheets = resp.sheets;
+        if (this.currentMasterId != this.currentUser.id) {
+          for (let us of this.currentUserSheets) {
+            for (let gs of this.currentSheets) {
+              if (us === gs) {
+                this.currentUserSheetId = us.toString();
+                break;
+              }
+            }
+          }
+        }
       });
   }
 }

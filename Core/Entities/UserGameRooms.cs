@@ -18,6 +18,6 @@ namespace Core.Entities
 
         public string Id { get; set; }
         public List<string> GameRooms { get; set; } = new List<string>();
-        public List<string> Sheets { get; set; } = new List<string>();
+        public List<int> Sheets { get; set; } = new List<int>();
     }
 }
