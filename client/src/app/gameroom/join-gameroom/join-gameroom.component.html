@@ -1,20 +1,20 @@
 <div class="d-flex justify-content-center mt-5">
-  <div class="col-3">
+  <div class="col-3 form-signin">
     <form [formGroup]="gameroomForm" (ngSubmit)="onSubmit()">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Join Game Room</h1>
       </div>
-      <div class="form-label-group">
+      <div class="form-label-group form-floating mb-3">
         <input formControlName="name" type="text" id="inputName" class="form-control" placeholder="Name of Room" />
         <label for="inputName">Name of Room</label>
       </div>
-      <div class="form-label-group">
+      <div class="form-label-group form-floating mb-3">
         <input formControlName="password" type="password" id="inputPassword" class="form-control"
           placeholder="Name of Room" />
         <label for="inputPassword">Password</label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="gameroomForm.invalid" id="b">
-        Create Game Room
+        Join Game Room
       </button>
     </form>
   </div>
